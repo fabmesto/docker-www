@@ -2,7 +2,8 @@ version: "3.3"
 
 services:
   db:
-    image: mysql:5.7
+    image: mariadb
+    container_name: mariadb-www
     volumes:
       - ./dump:/docker-entrypoint-initdb.d
       - persistent:/var/lib/mysql
@@ -18,6 +19,7 @@ services:
 
   www:
     build: .
+    container_name: www
     ports:
       - "80:80"
     volumes:
@@ -29,6 +31,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-wp
     restart: always
     ports:
       - 8080:80
