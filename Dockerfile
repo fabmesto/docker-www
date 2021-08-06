@@ -13,8 +13,16 @@ ENV PHP_TIMEZONE Europe/Rome
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
+# X DEBUG PHP
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
 # Additional PHP ini configuration
 COPY ./conf/php.ini /usr/local/etc/php/conf.d/
+
+CMD ["apache2-foreground"]
+
+EXPOSE 9000
 
 #RUN service apache2 restart
 #RUN sed -i "s/short_open_tag = Off/short_open_tag = On/" /usr/local/etc/php/php.ini

@@ -24,6 +24,7 @@ services:
       - "80:80"
     volumes:
       - ./www:/var/www/html/
+      - ./config/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
     links:
       - db
     networks:
