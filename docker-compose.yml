@@ -32,7 +32,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin-wp
+    container_name: phpmyadmin-www
     restart: always
     ports:
       - 8081:80
