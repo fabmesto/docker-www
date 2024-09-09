@@ -39,6 +39,7 @@ services:
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORT: somewordpress
-      UPLOAD_LIMIT: 300M
+      UPLOAD_LIMIT: 1024M
+      MEMORY_LIMIT: 1024M
 volumes:
   persistent:

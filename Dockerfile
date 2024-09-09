@@ -17,7 +17,7 @@ ENV PHP_TIMEZONE Europe/Rome
 RUN a2enmod rewrite
 
 # X DEBUG PHP
-RUN pecl install xdebug \
+RUN pecl install xdebug-3.1.5 \
     && docker-php-ext-enable xdebug
 
 # Additional PHP ini configuration
