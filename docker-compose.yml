@@ -29,6 +29,8 @@ services:
       - db
     networks:
       - default
+    environment:
+      PHP_EXTENSION_XDEBUG: 1
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
